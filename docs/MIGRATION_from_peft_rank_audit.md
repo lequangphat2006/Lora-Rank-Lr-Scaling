@@ -35,3 +35,7 @@ cd Lora-Rank-Lr-Scaling
 ```
 
 Nếu repo GitHub mới đã có commit khởi tạo (README hoặc LICENSE do GitHub tạo), `init_repo.ps1` sẽ dừng ở bước push; chạy `git pull origin main --allow-unrelated-histories` rồi push lại.
+
+## Ghi chu bo sung (2026-10-21)
+
+`test_rankcap.py`: xoa `test_analysis_detects_signal_and_noise`, `test_power_sim_monotone` va helper `synth` - chung kiem tra `analyze_pilot.analyse` / `simulate_power` (code phan tich power cua bai cu, da bo). Test con lai PASS (11/11), gom `test_gamma_alpha_parametrisations`.
