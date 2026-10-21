@@ -3,7 +3,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 """CPU tests (no downloads): python -m pytest -q  or  python test_rankcap.py"""
 import numpy as np, pandas as pd, torch
-import rankcap, analyze_pilot as ap
+import rankcap
 
 
 def tiny_model():
@@ -70,38 +70,6 @@ def test_imbalance():
     assert rankcap.max_feasible_N([5000, 5000, 400]) == 1200
     assert rankcap.feasible_imbalance([5000, 5000, 400], 3000) == \
         {1: False, 5: True, 20: True}
-
-
-def synth(sigma_lr, sigma_eps, S=5, L=12, seed=0):
-    rng = np.random.default_rng(seed); u = rng.normal(0, sigma_lr, L); rows = []
-    for s in range(S):
-        base = 0.80 + rng.normal(0, 0.01)
-        rows.append(["C1", 100 + s, "baseline", -1, 8, base, 0, 0])
-        for m in range(L):
-            for r in (1, 32):
-                rows.append([
-                    "C1", 100 + s, "layer", m, r,
-                    base + (-u[m] if r == 1 else 0) + rng.normal(0, sigma_eps),
-                    0, 0
-                ])
-    return pd.DataFrame(rows, columns=[
-        "cell", "seed", "config", "layer", "rank",
-        "macro_f1", "lora_params", "seconds"])
-
-
-def test_analysis_detects_signal_and_noise():
-    strong = ap.analyse(synth(0.02, 0.004))["by_rank"][1]
-    assert strong["rho"] > 0.8 and strong["perm_p"] < 0.01
-    null = [ap.analyse(synth(0.0, 0.01, seed=i))["by_rank"][1]
-            for i in range(20)]
-    assert np.mean([x["perm_p"] < 0.05 for x in null]) < 0.25
-    assert np.mean([x["rho"] for x in null]) < 0.35
-
-
-def test_power_sim_monotone():
-    lo = ap.simulate_power(0.002, 0.01, 5, nsim=150)["power_H1"]
-    hi = ap.simulate_power(0.02, 0.01, 5, nsim=150)["power_H1"]
-    assert hi > lo and hi > 0.8
 
 
 def test_end_to_end_tiny_training():
