@@ -1,0 +1,175 @@
+# 0A-bis: regret cua cac quy tac chuyen giao
+
+DELTA_R = 0.02 (placeholder; chot trong R0). sigma = 0.0136. Mo phong 400 mau / o.
+Thiet ke: P1 = 7 rank [np.int64(1), np.int64(2), np.int64(4), np.int64(8), np.int64(16), np.int64(32), np.int64(64)]; P2,P3 = [2, 8, 32, 64]. So cap (r,p) = 15.
+R-est: hoi quy 2D tren dung cac o tren (khong dung 7 rank o P2/P3). Luoi LR buoc 2 va sqrt2.
+R-probe: KHONG tinh (can E_W tu 0B). Khong co bootstrap/phan loai o day: day la regret cua uoc luong diem.
+Cot: mean = TB(regret trung binh theo cap); p95 = phan vi 95 cua no; %>d = ti le mau co cap xau nhat > DELTA_R.
+
+## c2=0.047 | buoc 2 | 3 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0023 | 0% | 0.0002 | 0.0008 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0002 | 0.0005 | 0% | PASS |
+| khalf | 0.0015 | 0% | 0.0002 | 0.0006 | 0% | PASS |
+
+## c2=0.047 | buoc 2 | 5 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0023 | 0% | 0.0001 | 0.0004 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0001 | 0.0003 | 0% | PASS |
+| khalf | 0.0015 | 0% | 0.0001 | 0.0003 | 0% | PASS |
+
+## c2=0.047 | buoc 2 | 8 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0023 | 0% | 0.0001 | 0.0002 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0001 | 0% | PASS |
+| khalf | 0.0015 | 0% | 0.0001 | 0.0002 | 0% | PASS |
+
+## c2=0.047 | buoc sqrt2 | 3 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0023 | 0% | 0.0001 | 0.0003 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0001 | 0% | PASS |
+| khalf | 0.0015 | 0% | 0.0001 | 0.0002 | 0% | PASS |
+
+## c2=0.047 | buoc sqrt2 | 5 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0023 | 0% | 0.0000 | 0.0002 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0001 | 0% | PASS |
+| khalf | 0.0015 | 0% | 0.0000 | 0.0001 | 0% | PASS |
+
+## c2=0.047 | buoc sqrt2 | 8 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0023 | 0% | 0.0000 | 0.0001 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0001 | 0% | PASS |
+| khalf | 0.0015 | 0% | 0.0000 | 0.0001 | 0% | PASS |
+
+## c2=0.1 | buoc 2 | 3 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0049 | 100% | 0.0001 | 0.0003 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0001 | 0.0002 | 0% | PASS |
+| khalf | 0.0032 | 100% | 0.0001 | 0.0002 | 0% | PASS |
+
+## c2=0.1 | buoc 2 | 5 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0049 | 100% | 0.0000 | 0.0001 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0001 | 0% | PASS |
+| khalf | 0.0032 | 100% | 0.0000 | 0.0001 | 0% | PASS |
+
+## c2=0.1 | buoc 2 | 8 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0049 | 100% | 0.0000 | 0.0001 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0001 | 0% | PASS |
+| khalf | 0.0032 | 100% | 0.0000 | 0.0001 | 0% | PASS |
+
+## c2=0.1 | buoc sqrt2 | 3 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0049 | 100% | 0.0000 | 0.0001 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0001 | 0% | PASS |
+| khalf | 0.0032 | 100% | 0.0000 | 0.0001 | 0% | PASS |
+
+## c2=0.1 | buoc sqrt2 | 5 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0049 | 100% | 0.0000 | 0.0001 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0000 | 0% | PASS |
+| khalf | 0.0032 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+
+## c2=0.1 | buoc sqrt2 | 8 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0049 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0000 | 0% | PASS |
+| khalf | 0.0032 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+
+## c2=0.2 | buoc 2 | 3 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0097 | 100% | 0.0000 | 0.0001 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0001 | 0% | PASS |
+| khalf | 0.0064 | 100% | 0.0000 | 0.0001 | 0% | PASS |
+
+## c2=0.2 | buoc 2 | 5 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0097 | 100% | 0.0000 | 0.0001 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0000 | 0% | PASS |
+| khalf | 0.0064 | 100% | 0.0000 | 0.0001 | 0% | PASS |
+
+## c2=0.2 | buoc 2 | 8 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0097 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0000 | 0% | PASS |
+| khalf | 0.0064 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+
+## c2=0.2 | buoc sqrt2 | 3 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0097 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0000 | 0% | PASS |
+| khalf | 0.0064 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+
+## c2=0.2 | buoc sqrt2 | 5 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0097 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0000 | 0% | PASS |
+| khalf | 0.0064 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+
+## c2=0.2 | buoc sqrt2 | 8 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0097 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0000 | 0% | PASS |
+| khalf | 0.0064 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+
+## c2=0.5 | buoc 2 | 3 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0244 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0000 | 0% | PASS |
+| khalf | 0.0160 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+
+## c2=0.5 | buoc 2 | 5 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0244 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0000 | 0% | PASS |
+| khalf | 0.0160 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+
+## c2=0.5 | buoc 2 | 8 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0244 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0000 | 0% | PASS |
+| khalf | 0.0160 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+
+## c2=0.5 | buoc sqrt2 | 3 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0244 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0000 | 0% | PASS |
+| khalf | 0.0160 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+
+## c2=0.5 | buoc sqrt2 | 5 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0244 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0000 | 0% | PASS |
+| khalf | 0.0160 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+
+## c2=0.5 | buoc sqrt2 | 8 seed
+| hyp | R-muA mean | R-muA %>d | R-est mean | R-est p95 | R-est %>d | PASS(R-est p95<=d) |
+|---|---|---|---|---|---|---|
+| k1 | 0.0244 | 100% | 0.0000 | 0.0000 | 0% | PASS |
+| muA | 0.0000 | 0% | 0.0000 | 0.0000 | 0% | PASS |
+| khalf | 0.0160 | 100% | 0.0000 | 0.0000 | 0% | PASS |
