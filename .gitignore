@@ -31,3 +31,6 @@ results/**/mechanism/
 # Thư mục tạm
 _inbox/
 _scratch/
+
+# File backup tam
+*.bak

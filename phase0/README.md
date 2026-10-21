@@ -1,4 +1,4 @@
-# Pha 0: nhận dạng, kiểm định công cụ đo, pilot
+﻿# Pha 0: nhận dạng, kiểm định công cụ đo, pilot
 
 Pha 0 trả lời hai câu trước khi tốn GPU lớn (xem `docs/PROPOSAL_v3.1.md`, mục 6 của bản v3 gốc):
 (A) thiết kế có phân biệt được ba chữ ký số mũ Hκ=1, HμA, Hκ=1/2 không; (B) công cụ đo cơ chế có đủ bền để gánh claim không.
@@ -6,7 +6,7 @@ Pha 0 trả lời hai câu trước khi tốn GPU lớn (xem `docs/PROPOSAL_v3.1
 | Phần | Việc | Trạng thái (2026-10-21) | Thư mục |
 |---|---|---|---|
 | 0A | Mô phỏng nhận dạng (CPU) | **Đã chạy**, giao thức v3.2. Kết luận: **chưa phán quyết được G0** vì thiếu c₂/σ của NLL; xem bảng bên dưới | `0A_identification/` |
-| 0A-bis | Mô phỏng lại đúng thiết kế đã lập ngân sách (7 rank P1 + 4 rank P2/P3, regret của các quy tắc) | **Chưa làm**; phải xong trước R0 | `0A_identification/` (thêm script) |
+| 0A-bis | Mô phỏng lại đúng thiết kế đã lập ngân sách (7 rank P1 + 4 rank P2/P3, regret của các quy tắc) | **Đã chạy** 2026-10-21: R-est đạt δ_R = 0,02 ở 3 seed; R-μA không phải fallback an toàn cho k1; xem `logs_bis/bis_01_regret.txt` | `0A_identification/` |
 | 0B | Năm phép kiểm công cụ đo T1–T5 | Chưa làm (chưa có code log E_W, E_f, ρ) | `0B_measurement/` |
 | 0C | Pilot bề mặt NLL: D1, rank {2, 8, 64}, 6 LR, 3 seed (54 lượt) | Chưa làm | `0C_pilot/` |
 | 0.1 | Hồi quy σ̂₀ trên 5 rank, bootstrap theo seed (69 lần tune của audit) | Chưa thấy kết quả trong repo | `data_prior/audit_tuning/` |

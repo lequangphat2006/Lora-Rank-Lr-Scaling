@@ -1,4 +1,4 @@
-# Lora-Rank-Lr-Scaling
+﻿# Lora-Rank-Lr-Scaling
 
 **Chuyển giao learning rate giữa các rank LoRA: phép kiểm phân biệt có đăng ký trước, nguyên lý đẳng-bước và chi phí GPU**
 
@@ -108,7 +108,7 @@ pip install -r requirements.txt
 python -m pytest code/test_rankcap.py code/test_run_pilot.py code/test_run_pilot_v3.py -q
 ```
 
-Hai test mới (`test_gamma_alpha_parametrisations`, `test_alpha_mode_scaling_p_modes`): test đầu thuần Python và đã đạt khi soạn; test sau cần torch và peft nên **chưa chạy được** khi soạn, hãy chạy `pytest` trên máy có torch trước khi dùng `p:<p>` cho lượt thật.
+Hai test mới: `test_gamma_alpha_parametrisations` (thuần Python) và `test_alpha_mode_scaling_p_modes` (cần torch + peft) — **cả hai đã đạt** trên torch 2.13.0+cpu / peft 0.20.0 ngày 2026-10-21. Bộ test đầy đủ 29/29 PASS.
 
 ## Dữ liệu và đạo đức nghiên cứu
 
