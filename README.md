@@ -1,4 +1,4 @@
-﻿# Lora-Rank-Lr-Scaling
+# Lora-Rank-Lr-Scaling
 
 **Chuyển giao learning rate giữa các rank LoRA: phép kiểm phân biệt có đăng ký trước, nguyên lý đẳng-bước và chi phí GPU**
 

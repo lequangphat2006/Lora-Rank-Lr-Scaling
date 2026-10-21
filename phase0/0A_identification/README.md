@@ -40,6 +40,7 @@ Mọi file .py để chung một thư mục. Chỉ cần numpy và scipy (không
 2. Phải đạt ở **mọi** bề mặt kiểm khi bề mặt hiệu chỉnh khác bề mặt kiểm (bước 08), không chỉ trên mô hình đã dùng để hiệu chỉnh.
 3. Giả thuyết trung gian (0.82, 1), (0.8, 0.6): báo cáo độ nhạy, không tính vào cổng.
 
+**Lưu ý (2026-10-21):** Mục «Quy tắc phán quyết đề xuất cho đăng ký 0» ở trên là bản nháp từ v3, đã bị thay thế bởi **A1** trong `docs/PROPOSAL_v3.1.md`. Tiêu chí độ phủ CI [0.93, 0.97] không còn dùng. Xem `registrations/R0_giao_thuc_G0_v3.2.md` mục 3 cho tiêu chí chính thức (unsafe% ≤ 5%, acc ≥ 0,9 khi được phép kết luận, tỉ lệ cờ ~5%).
 ## Kết quả đã quan sát (trên máy tôi; hãy chạy lại và so sánh)
 - Bề mặt lý tưởng + bootstrap tham số: mọi thiết kế từ 3 seed trở lên PASS.
 - Có plateau + vách, mô hình đúng: PASS khi c₂ ≥ 0.2 (bước 2, 5 seed); c₂ ≈ 0.047 cần bước √2 và 5–8 seed.

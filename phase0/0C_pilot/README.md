@@ -16,12 +16,14 @@ Lệnh gợi ý (Kaggle, mỗi GPU một tiến trình): xem `docs/SETUP_KAGGLE.
 
 ### Quy tắc dừng / mở rộng theo c₂(NLL)
 
-| c₂(NLL) ước lượng | CI 95% của c₂ | Hành động 0C | Ảnh hưởng Phase 1 |
+| c₂(NLL) ước lượng | CI 95% của c₂ | Hành động 0C | Preview cho R1 (không ràng buộc) |
 |---|---|---|---|
-| ≥ 0,2 | CI dưới ≥ 0,15 | Dừng ở 54 lượt (3 seed × 6 LR × 3 rank) | Giữ bước 2, số seed theo 0A-bis |
+| ≥ 0,2 | CI dưới ≥ 0,15 | Dừng ở 54 lượt (3 seed × 6 LR × 3 rank) | Giữ 3 seed ở pilot; Phase 1 theo A5: bước 2, 5 seed |
 | 0,1–0,2 | CI giao [0,1; 0,2] | Mở rộng lên 8 seed × 14 LR (bước √2) = +112 lượt | Chuyển sang bước √2, 8 seed |
-| < 0,1 | CI trên < 0,1 | Dừng sớm; kích hoạt kịch bản C **hoặc** chuyển sang cell D2/D3 | G0 không đạt |
+| < 0,1 | CI trên < 0,1 | Dừng sớm; không tăng seed; kích hoạt nhánh "Go hẹp" (A5) hoặc chuyển sang cell D2/D3 | G0 không đạt |
 | Bất kỳ | CI rộng > 0,1 | Mở rộng seed để thu hẹp CI | Chờ kết quả |
+
+Cột "Preview cho R1" không ràng buộc — R1 sẽ khóa thiết kế Phase 1 dựa trên kết quả 0C. Cột "Hành động 0C" là quy tắc của chính pilot, có ràng buộc.
 
 ### Quy tắc về số seed (bổ sung sau 0A-bis)
 

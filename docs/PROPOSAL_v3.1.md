@@ -72,9 +72,9 @@ Cùng công thức v3 (Pha 0: 56; Pha 1: 4 cell-ngân sách × 7 rank × L × s 
 
 Các số này giữ nguyên ghi chú của v3: cell xác nhận nặng dùng cùng L và s ở đây; có thể giảm bằng lưới địa phương quanh LR dự đoán (như cell nhẹ), nhưng đó là thay đổi thiết kế phải qua đăng ký. Thứ tự cắt ở mục 13.3 của v3 vẫn giữ nguyên, thêm mục đầu: "dùng kịch bản A thay vì B hoặc C nếu 0C cho phép". Thời gian chạy không phụ thuộc rank nên chi phí GPU của một lượt là như nhau ở mọi rank; mô hình chi phí ở mục 9.1 chỉ cần đếm số lượt và tỉ lệ t_p/tổng số bước.
 
-## A7. Đăng ký 0 không còn "trước khi thấy kết quả" cho 0A (sửa mục 12)
+## A7. Đăng ký 0 chỉ khóa giao thức G0 v3.2, ngưỡng 0B, cổng G0/G0B và ma trận quyết định 0C (sửa mục 12)
 
-v3 nói R0 khóa ngưỡng trước khi thấy kết quả 0A. Thực tế 0A đã được chạy và chỉnh qua nhiều phiên bản (v1 → v3.2; ngưỡng, bộ phân loại và giao thức đổi sau khi xem kết quả). Vì vậy: 0A được ghi là **mô phỏng phát triển giao thức (exploratory)**; R0 khóa giao thức v3.2 nguyên văn và toàn bộ 0A-bis, 0B, 0C; bài báo nêu rõ điều này trong phần hạn chế. R0 chỉ nộp **sau** 0A-bis và **trước** mọi lượt GPU của 0B, 0C.
+v3 nói R0 khóa ngưỡng trước khi thấy kết quả 0A. Thực tế 0A đã được chạy và chỉnh qua nhiều phiên bản (v1 → v3.2; ngưỡng, bộ phân loại và giao thức đổi sau khi xem kết quả). Vì vậy: 0A **và 0A-bis** được ghi là **mô phỏng phát triển giao thức (exploratory)**, không khóa trong R0; R0 khóa giao thức v3.2, ngưỡng 0B, cổng G0/G0B và ma trận quyết định 0C; bài báo nêu rõ điều này trong phần hạn chế. R0 chỉ nộp **sau** 0A-bis và **trước** mọi lượt GPU của 0B, 0C.
 
 ## A8. Lộ trình cập nhật (thay mục 13.2 và Phụ lục C)
 

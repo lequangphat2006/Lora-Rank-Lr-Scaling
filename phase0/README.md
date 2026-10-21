@@ -1,4 +1,4 @@
-﻿# Pha 0: nhận dạng, kiểm định công cụ đo, pilot
+# Pha 0: nhận dạng, kiểm định công cụ đo, pilot
 
 Pha 0 trả lời hai câu trước khi tốn GPU lớn (xem `docs/PROPOSAL_v3.1.md`, mục 6 của bản v3 gốc):
 (A) thiết kế có phân biệt được ba chữ ký số mũ Hκ=1, HμA, Hκ=1/2 không; (B) công cụ đo cơ chế có đủ bền để gánh claim không.

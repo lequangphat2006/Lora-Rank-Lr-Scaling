@@ -1,6 +1,14 @@
-﻿# Changelog
+# Changelog
 
 ## [Chưa phát hành]
+
+### 2026-10-21: đồng bộ A7/0B/0C/0A trước R0
+- Sửa A7: 0A và 0A-bis gắn nhãn exploratory, không khóa trong R0; R0 khóa giao thức v3.2, ngưỡng 0B, cổng G0/G0B, ma trận quyết định 0C.
+- 0B: tách ngoại lệ T2 rank 64 cho G0B-a (E_W) và G0B-b (ρ); T1 chỉ chạy sau khi nộp R0.
+- 0C: tách rõ seed pilot (3) vs seed Phase 1 (theo A5); "Go hẹp" thay "kịch bản C" cho nhánh c₂ < 0,1; cột "Ảnh hưởng Phase 1" đổi thành "Preview cho R1 (không ràng buộc)".
+- 0A: ghi chú mục «Quy tắc phán quyết đề xuất» đã bị A1 thay thế.
+- registrations/README: ghi rõ ε_x của R2 khác ε_x của T3/0B.
+- Thêm `registrations/R0_giao_thuc_G0_v3.2.md` (draft 149 dòng; còn trống ngày nộp, DOI, tag repo).
 
 ### 2026-10-21: khởi tạo repo
 - Tách thành dự án riêng, không thừa kế lịch sử git hay đăng ký trước của `Peft-Rank-Audit` (xem `docs/MIGRATION_from_peft_rank_audit.md`).
