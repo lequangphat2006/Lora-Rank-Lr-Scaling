@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite it as below."
+title: "Lora-Rank-Lr-Scaling: preregistered tests of learning-rate scaling across LoRA ranks"
+authors:
+  - family-names: "Le"
+    given-names: "Quang Phat"
+    affiliation: "Faculty of Information Technology, Quy Nhon University"
+repository-code: "https://github.com/lequangphat2006/Lora-Rank-Lr-Scaling"
+license: MIT
+version: 0.1.0-dev
+date-released: 2026-10-21

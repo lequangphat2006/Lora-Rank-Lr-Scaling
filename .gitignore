@@ -1,0 +1,33 @@
+# Dữ liệu gốc (không phân phối lại; xem data/README.md)
+data/*
+!data/README.md
+
+# Cache và môi trường
+hf_cache/
+.cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+venv/
+.venv/
+env/
+.env
+.env.local
+.ipynb_checkpoints/
+
+# Hệ điều hành
+.DS_Store
+Thumbs.db
+
+# Kết quả nặng (chỉ giữ CSV gộp, JSON phân tích và log nhỏ)
+results/**/raw/
+results/**/*.npz
+results/**/logits/
+results/**/epochwise/
+results/**/mechanism/
+*.ckpt
+*.safetensors
+
+# Thư mục tạm
+_inbox/
+_scratch/
